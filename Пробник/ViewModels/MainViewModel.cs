@@ -49,34 +49,35 @@ namespace Пробник.ViewModels
             }
         }
 
-        public void AddButton_Click(object sender, RoutedEventArgs e)
+        public void AddProduct(int id, string productName, string description, int price)
         {
             using (var dbContext = new AppDBContext())
             {
                 // Создание и добавление нового продукта
                 Product newProduct = new Product
                 {
-                    ProductId = 1,
-                    ProductName = "Новый продукт",
-                    Description = "Описание нового продукта",
-                    Price = 10 // Пример цены
+                    ProductId = id,
+                    ProductName = productName,
+                    Description = description,
+                    Price = price
                 };
                 dbContext.Products.Add(newProduct);
                 dbContext.SaveChanges();
 
                 // Обновление списка продуктов на интерфейсе
-                //RefreshProducts();
+                LoadProducts();
+                RefreshProducts();
             }
         }
 
-        /*public void RefreshProducts()
+        public void RefreshProducts()
         {
             using (var dbContext = new AppDBContext())
             {
                 Products = new ObservableCollection<Product>(dbContext.Products.ToList());
                 OnPropertyChanged(nameof(Products)); // Уведомляем интерфейс о изменении данных
             }
-        }*/
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyname)

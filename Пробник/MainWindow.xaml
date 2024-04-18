@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Пробник"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="760" Width="1159">
     <Grid>
         <ListBox Width ="500"  ItemsSource="{Binding Products}">
             <ListBox.ItemTemplate>
@@ -21,7 +21,9 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Content="Добавить элемент" Height ="100"  Width ="150"  Click="AddButton_Click" Margin="10,40,690,294"/>
+        <TextBox x:Name="ProductIdTextBox" Height ="100" Width ="150" Margin="165,296,844,348" Text="Новый продукт"/>
+        <TextBox x:Name="ProductNameTextBox" Height ="100" Width ="150" Margin="164,621,845,23" Text="Новый продукт"/>
+        <TextBox x:Name="DescriptionTextBox" Height ="100" Width ="150" Margin="165,506,844,138" Text="Описание нового продукта"/>
+        <TextBox x:Name="PriceTextBox" Height ="100" Width ="150" Margin="164,401,845,243" Text="10"/>
     </Grid>
-    
-    
 </Window>
