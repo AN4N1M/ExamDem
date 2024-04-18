@@ -70,6 +70,24 @@ namespace Пробник.ViewModels
             }
         }
 
+        /*private void SelectImage_Click(object sender, RoutedEventArgs e)
+{
+    OpenFileDialog openFileDialog = new OpenFileDialog();
+    openFileDialog.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif;*.bmp)|*.png;*.jpg;*.jpeg;*.gif;*.bmp|All files (*.*)|*.*";
+
+    if (openFileDialog.ShowDialog() == true)
+    {
+        SelectedImagePath = openFileDialog.FileName;
+        SelectedImage.Source = new BitmapImage(new Uri(SelectedImagePath));
+    }
+}
+<!-- Кнопка для выбора файла изображения -->
+        <Button Content="Выбрать изображение" Click="SelectImage_Click"/>
+
+        <!-- Элемент для отображения выбранного изображения -->
+        <Image x:Name="SelectedImage" Width="100" Height="100"/>
+*/
+
         public void RefreshProducts()
         {
             using (var dbContext = new AppDBContext())
